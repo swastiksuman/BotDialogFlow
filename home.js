@@ -11,7 +11,8 @@ app.get("/", (req, res) => {
 
 app.post("/interact", (req, res) => {
   console.log("+++POST+++")
-  res.send(interact.runSample());
+  interact.runSample().then((value) => res.send(value))
+  
 });
 
 // start express server on port 5000
